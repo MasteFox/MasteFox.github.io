@@ -35,9 +35,9 @@ var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
 /* large line chart */
 var chLine = document.getElementById("chLine");
 var chartData = {
-  labels: ["S", "M", "T", "W", "T", "F", "S"],
+  labels: ["Пн", "Вт", "Ср", "Чт", "Пн", "Сб", "Вс"],
   datasets: [{
-    data: [589, 445, 483, 503, 689, 692, 634],
+    data: [69, 68, 52, 53, 89, 92, 63],
     backgroundColor: 'transparent',
     borderColor: colors[0],
     borderWidth: 4,
@@ -113,13 +113,13 @@ if (chBar) {
   new Chart(chBar, {
   type: 'bar',
   data: {
-    labels: ["S", "M", "T", "W", "T", "F", "S"],
+    labels: ["Пн", "Вт", "Ср", "Чт", "Пн", "Сб", "Вс"],
     datasets: [{
-      data: [589, 445, 483, 503, 689, 692, 634],
+      data: [58, 45, 48, 50, 69, 92, 64],
       backgroundColor: colors[0]
     },
     {
-      data: [639, 465, 493, 478, 589, 632, 674],
+      data: [63, 65, 43, 48, 59, 62, 67],
       backgroundColor: colors[1]
     }]
   },
