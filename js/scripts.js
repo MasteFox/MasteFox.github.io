@@ -29,6 +29,39 @@
             }
         }
     });
+//Teams
+
+anychart.onDocumentReady(function () {
+  // To work with the data adapter you need to reference the data adapter script file from AnyChart CDN
+  // https://cdn.anychart.com/releases/8.9.0/js/anychart-data-adapter.min.js
+  
+  anychart.data.loadGoogleSpreadsheet('1VU26ww92nAlRBxx7joXE74OokUcPZw-AAJarLV_EX3k', function(data) {
+// the data default sheet is loaded into the "data" variable
+// create a chart
+var chart = anychart.column();
+// set data
+chart.data(data);
+// display a chart
+chart.container('container1');
+chart.draw();   
+  });
+});
+
+anychart.onDocumentReady(function () {
+  // To work with the data adapter you need to reference the data adapter script file from AnyChart CDN
+  // https://cdn.anychart.com/releases/8.9.0/js/anychart-data-adapter.min.js
+  
+  anychart.data.loadGoogleSpreadsheet('1VU26ww92nAlRBxx7joXE74OokUcPZw-AAJarLV_EX3k', function(data) {
+// the data default sheet is loaded into the "data" variable
+// create a chart
+var chart = anychart.column();
+// set data
+chart.data(data);
+// display a chart
+chart.container('container');
+chart.draw();   
+  });
+});
 // chart colors
 var colors = ['#007bff','#28a745','#333333','#c3e6cb','#dc3545','#6c757d'];
 
@@ -305,6 +338,34 @@ if (chLine3) {
         } else {
             $("#mainNav").removeClass("navbar-shrink");
         }
+        $.getJSON("https://spreadsheets.google.com/feeds/list/1GnakUnNQvFXjuzMSPnBpU9eufb4SooQLGL2oFc3lfAs/od6/public/values?alt=json", data => {
+  var labels = [];
+  var numbers = [];
+  data.feed.entry.forEach(e => {
+    labels.push(e['gsx$names']['$t']);
+    numbers.push(Number(e['gsx$numbers']['$t']));
+  });
+  new Chart(document.getElementById('myChart'), {
+    type: 'radar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Current level',
+        data: numbers,
+        backgroundColor: 'rgba(253, 48, 76, 0.2)',
+        borderColor: 'rgb(253, 48, 76)',
+        pointBackgroundColor: 'rgb(253, 48, 76)'
+      }]
+    },
+    options: {
+      tooltips: {
+        callbacks: {
+          title: (tooltipItem, data) => data.labels[tooltipItem[0].index]
+        }
+      }
+    }
+  });
+});
     };
     // Collapse now if page is not at top
     navbarCollapse();

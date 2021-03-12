@@ -11,6 +11,8 @@
     <title>Оперативная панель мониторинга</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script
       src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
       crossorigin="anonymous"
@@ -32,6 +34,16 @@
       integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w=="
       crossorigin="anonymous"
     />
+    //anychart//
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-exports.min.js"></script>
+<script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.anychart.com/releases/8.9.0/css/anychart-ui.min.css" />
+
+
+
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"
       integrity="sha512-hZf9Qhp3rlDJBvAKvmiG+goaaKRZA6LKUO35oK6EsM0/kjPK32Yw7URqrq3Q+Nvbbt8Usss+IekL7CRn83dYmw=="
@@ -103,13 +115,30 @@
             </div>
           </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
         <a
           class="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
           href="#services"
-          >узнать больше</a
-        >
+          >узнать больше</a>
+          
       </div>
     </header>
+    
     <!-- Services-->
     <section class="page-section" id="services">
       <div class="container">
@@ -173,80 +202,16 @@
     <section class="page-section bg-light" id="portfolio">
       <div class="container">
         <div class="text-center">
-          <h2 class="section-heading text-uppercase">Portfolio</h2>
+          <h2 class="section-heading text-uppercase"><canvas id="myChart"></canvas></h2>
           <h3 class="section-subheading text-muted">
             <div class="row my-2">
-                <div class="col-md-6 py-1">
+                <div class="col-6">
                   <div class="masthead-heading text-uppercase">
                     <div
                       id="anychart-embed-samples-wd-data-adapter-spreadsheet-01"
                       class="anychart-embed anychart-embed-samples-wd-data-adapter-spreadsheet-01"
                     >
-                      <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-base.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-                      <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-exports.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-                      <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-data-adapter.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-                      <script src="https://cdn.anychart.com/releases/8.9.0/js/anychart-ui.min.js?hcode=a0c21fc77e1449cc86299c5faa067dc4"></script>
-                      <div
-                        id="ac_style_samples-wd-data-adapter-spreadsheet-01"
-                        style="display: none"
-                      >
-                        #container { width: 100%; height: 80%; margin:auto; padding:
-                        -100; }
-                      </div>
-                      <script>
-                        ;(function () {
-                          function ac_add_to_head(el) {
-                            var head = document.getElementsByTagName('head')[0]
-                            head.insertBefore(el, head.firstChild)
-                          }
-                          function ac_add_link(url) {
-                            var el = document.createElement('link')
-                            el.rel = 'stylesheet'
-                            el.type = 'text/css'
-                            el.media = 'all'
-                            el.href = url
-                            ac_add_to_head(el)
-                          }
-                          function ac_add_style(css) {
-                            var ac_style = document.createElement('style')
-                            if (ac_style.styleSheet) ac_style.styleSheet.cssText = css
-                            else ac_style.appendChild(document.createTextNode(css))
-                            ac_add_to_head(ac_style)
-                          }
-                          ac_add_link(
-                            'https://cdn.anychart.com/releases/8.9.0/css/anychart-ui.min.css?hcode=a0c21fc77e1449cc86299c5faa067dc4'
-                          )
-                          ac_add_style(
-                            document.getElementById(
-                              'ac_style_samples-wd-data-adapter-spreadsheet-01'
-                            ).innerHTML
-                          )
-                          ac_add_style(
-                            '.anychart-embed-samples-wd-data-adapter-spreadsheet-01{width:900px;height:600px;}'
-                          )
-                        })()
-                      </script>
-                      <div id="container"></div>
-                      <script>
-                        anychart.onDocumentReady(function () {
-                          // To work with the data adapter you need to reference the data adapter script file from AnyChart CDN
-                          // https://cdn.anychart.com/releases/8.9.0/js/anychart-data-adapter.min.js
-      
-                          anychart.data.loadGoogleSpreadsheet(
-                            '1VU26ww92nAlRBxx7joXE74OokUcPZw-AAJarLV_EX3k',
-                            function (data) {
-                              // the data default sheet is loaded into the "data" variable
-                              // create a chart
-                              var chart = anychart.pie()
-                              // set data
-                              chart.data(data)
-                              // display a chart
-                              chart.container('container')
-                              chart.draw()
-                            }
-                          )
-                        })
-                      </script>.
+                     
           </h3>
         </div>
         
@@ -262,9 +227,17 @@
         <div class="text-center">
           <h2 class="section-heading text-uppercase">About</h2>
           <h3 class="section-subheading text-muted">
-            Lorem ipsum dolor sit amet consectetur.
+            <div class="row">
+              <div class="col-6">
+            <div id="container"></div>
+           </div>
+           <div class="row my-2">
+            <div class="col-6">
+          <div id="container1"></div>
+         </div>
           </h3>
         </div>
+        
        
             </div>
           </li>
