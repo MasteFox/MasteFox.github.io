@@ -338,7 +338,7 @@ if (chLine3) {
         } else {
             $("#mainNav").removeClass("navbar-shrink");
         }
-        $.getJSON("https://spreadsheets.google.com/feeds/list/1GnakUnNQvFXjuzMSPnBpU9eufb4SooQLGL2oFc3lfAs/od6/public/values?alt=json", data => {
+        $.getJSON("https://spreadsheets.google.com/feeds/list/1VU26ww92nAlRBxx7joXE74OokUcPZw-AAJarLV_EX3k/od6/public/values?alt=json", data => {
   var labels = [];
   var numbers = [];
   data.feed.entry.forEach(e => {
@@ -346,11 +346,11 @@ if (chLine3) {
     numbers.push(Number(e['gsx$numbers']['$t']));
   });
   new Chart(document.getElementById('myChart'), {
-    type: 'radar',
+    type: 'line',
     data: {
       labels: labels,
       datasets: [{
-        label: 'Current level',
+        label: 'Часы',
         data: numbers,
         backgroundColor: 'rgba(253, 48, 76, 0.2)',
         borderColor: 'rgb(253, 48, 76)',
