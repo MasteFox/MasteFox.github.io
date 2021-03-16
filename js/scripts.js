@@ -40,7 +40,6 @@
   ]
 
   /* large line chart */
-
   var chLine = document.getElementById('chLine')
   var chartData = {
     labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пн', 'Сб', 'Вс'],
@@ -347,16 +346,25 @@
             labels: labels,
             datasets: [
               {
-                label: 'Часы',
-                data: numbers2,
-                numbers,
+                label: 'Вовремя',
+                data: numbers,
                 backgroundColor: 'rgba(253, 48, 76, 0.2)',
                 borderColor: 'rgb(253, 48, 76)',
                 pointBackgroundColor: 'rgb(253, 48, 76)',
+                order: 1,
+              },
+              {
+                label: 'Невовремя',
+                data: numbers2,
+                backgroundColor: 'rgba(255, 159, 64, 0.2)',
+                borderColor: 'rgb(75, 192, 192)',
+                pointBackgroundColor: 'rgb(250, 62, 50)',
+                order: 2,
               },
             ],
           },
           options: {
+            lineOptions,
             tooltips: {
               callbacks: {
                 title: (tooltipItem, data) => data.labels[tooltipItem[0].index],
