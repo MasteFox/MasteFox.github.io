@@ -364,6 +364,9 @@
             ],
           },
           options: {
+            animation: {
+              duration: 2000,
+            },
             lineOptions,
             tooltips: {
               callbacks: {
