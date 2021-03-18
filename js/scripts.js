@@ -364,6 +364,11 @@
             ],
           },
           options: {
+            render: {
+              duration: 800,
+              lazy: false,
+              easing: 'easeOutBounce',
+            },
             animation: {
               duration: 2000,
             },
